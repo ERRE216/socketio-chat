@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Live Chat</title>
+
+    <!-- < Custom CSS > -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="body">
+    <main class="main-register">
+      <section class="sec-1">
+        <div class="main-component bg-transparent-white ">
+          <h3
+            class="title"
+            style="font-size: 1.3rem; color:rgba(0, 0, 0, 0.8); margin-bottom: 15px"
+          >
+            Register
+        </h3>
+        
+          <form
+            id="form"
+            action="/register"
+            method="POST"
+            enctype="application/x-www-form-urlencoded"
+          >
+            <div class="form-body">
+              <input
+                class="form-item"
+                type="text"
+                name="username"
+                placeholder="Username..."
+                id="username"
+                required
+              />
+              <input
+                class="form-item"
+                type="email"
+                name="email"
+                placeholder="Email..."
+                id="email"
+                required
+              />
+              <input
+                class="form-item"
+                type="password"
+                name="password"
+                placeholder="Password..."
+                id="password"
+                required
+              />
+              <input
+                class="form-item"
+                type="password"
+                name="confirmPassword"
+                placeholder="Repeat Password..."
+                id="confirmPassword"
+                required
+                />
+              <p class="errors"></p>
+              <input class="form-item btn-submit" type="submit" value="Register" />
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div class="backgroung"><svg height="100vh" width="100vw">
+      <defs>
+        <radialGradient id="gradient">
+          <stop offset="30%" stop-color="var(--color-stop)"/>
+          <stop offset="100%" stop-color="var(--color-bot)"/>
+
+        </radialGradient>
+      </defs>
+      <g>
+        <circle class="gradient-bg" cx="0" c0="500" r="55vw" stroke="purple" stroke-width="0">
+      </g>
+      </svg>
+    </div>
+  </body>
+  <script>
+      const username = document.querySelector('#username')
+      const password = document.querySelector('#password');
+      const cpassword = document.querySelector('#confirmPassword');
+      const email = document.querySelector('#email')
+
+      const form = document.getElementById('form');
+
+      const errors = document.querySelector('.errors')
+
+      form.addEventListener('submit',e =>{
+          if(password.value !== cpassword.value){
+              console.log(password.value , cpassword.value)
+              errors.innerHTML='Passwords are different'
+                e.preventDefault() 
+          }
+          if(username.value.trim() === ''){
+              console.log(username.value.trim())
+              errors.innerHTML='Username must be filled'
+              e.preventDefault()
+          }
+          if(email.value.trim() === ''){
+              console.log(username.value.trim())
+              errors.innerHTML='Must insert a Email'
+              e.preventDefault()
+          }
+      });
+
+  </script>
+</html>

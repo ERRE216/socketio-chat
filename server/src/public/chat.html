@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Live Chat</title>
+
+    <!-- < Custom CSS > -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <main class="app">
+      <section class="rooms-container">
+        <div class="col-title">
+          <h1 class="title">Rooms</h1>
+          <div class="create-room" id="create-room">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="Rooms-List"></div>
+      </section>
+      <section class="chat-container">
+        <main class="chat scroller" id="chat"></main>
+        <div class="input-div">
+          <form class="form-group" id="chat-form">
+            <input
+              type="text"
+              class="input-field"
+              autocomplete="off"
+              maxlength="255"
+            />
+            <button type="submit" class="send-btn">SEND</button>
+          </form>
+        </div>
+      </section>
+      <section class="users-container">
+        <div class="col-title">
+          <h1 class="title">Users</h1>
+        </div>
+        <div class="Users-List"></div>
+      </section>
+    </main>
+
+    <!-- < Scripts > -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/io.js"></script>
+  </body>
+</html>

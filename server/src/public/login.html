@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Live Chat</title>
+
+    <!-- < Custom CSS > -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="body">
+    <main class="main-login">
+      <section class="main-component"></section>
+      <section class="sec-1">
+        <div class="main-component">
+          <h1
+            class="title"
+            style="font-size: 2rem; color:rgba(0, 0, 0, 0.8); margin-bottom: 15px"
+          >
+            🔴 Live Chat!
+          </h1>
+          <form
+            action="/login"
+            method="POST"
+            enctype="application/x-www-form-urlencoded"
+          >
+            <div class="form-body">
+              <input
+                class="form-item"
+                type="text"
+                name="username"
+                placeholder="Username..."
+              />
+              <input
+                class="form-item"
+                type="password"
+                name="password"
+                placeholder="Password..."
+              />
+              <input class="form-item btn-submit" type="submit" value="Login" />
+              <p>
+                Don't have an account? <a href="/register">Register</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div class="backgroung"><svg height="100vh" width="100vw">
+      <defs>
+        <radialGradient id="gradient">
+          <stop offset="30%" stop-color="var(--color-stop)"/>
+          <stop offset="100%" stop-color="var(--color-bot)"/>
+
+        </radialGradient>
+      </defs>
+      <g>
+        <circle class="gradient-bg" cx="0" c0="500" r="55vw" stroke="black" stroke-width="0">
+      </g>
+      </svg>
+    </div>
+  </body>
+</html>
